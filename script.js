@@ -48,7 +48,7 @@ const timer = deadline => {
         
         const minutes = Math.floor(timeRemaining / 1000 / 60 % 60);
         const hours = Math.floor(timeRemaining / 1000 / 60 / 60 % 24) + timeGrinvich;
-        const days = Math.floor(timeRemaining/1000 / 60 /60 / 24 );
+        const days = Math.floor(timeRemaining /1000 / 60 /60 / 24 );
 
         return {
             timeRemaining,  minutes, hours, days
