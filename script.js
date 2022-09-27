@@ -42,13 +42,13 @@ const timer = deadline => {
         const timeRemaining = dataStop - dataNow;
 
         const date = new Date();
-        const timeGrinvich = (date.getTimezoneOffset() + 180)/60;
+        const timeGrinvich = (date.getTimezoneOffset() + 180) / 60;
         console.log(timeGrinvich)
 
         
-        const minutes = Math.floor(timeRemaining/1000/60 % 60);
-        const hours = Math.floor(timeRemaining/1000/60/60 % 24) + timeGrinvich;
-        const days = Math.floor(timeRemaining/1000/60 /60/24 );
+        const minutes = Math.floor(timeRemaining / 1000 / 60 % 60);
+        const hours = Math.floor(timeRemaining / 1000 / 60 / 60 % 24) + timeGrinvich;
+        const days = Math.floor(timeRemaining/1000 / 60 /60 / 24 );
 
         return {
             timeRemaining,  minutes, hours, days
@@ -61,9 +61,9 @@ const timer = deadline => {
         timerBlockHour.textContent = timer.hours < 10 ? '0' + timer.hours : timer.hours;
         timerBlockMinute.textContent =  timer.minutes < 10 ? '0' + timer.minutes : timer.minutes;
 
-        const dec = timer.days%100;
-        const h = timer.hours%100;
-        const m = timer.minutes%10;
+        const dec = timer.days % 100;
+        const h = timer.hours % 100;
+        const m = timer.minutes % 10;
 
         timerParDay.textContent = ((dec >=11 &&  dec <= 19) || dec >= 5 || dec == 0) ? 'дней' : (dec == 1 ? 'день' : 'дня');
         timerParHour.textContent = ((h >=11 &&  h <= 19) || h >= 5 || h == 0) ? 'часов' : (h == 1 ? 'час' : 'часа');
